@@ -1,15 +1,106 @@
-body
-  > section
-    height                                : 100vh
-    > h1
-      margin-bottom                       : 0
-      font-size                           : (3.3 * UNIT)
-      font-weight                         : FONT_WEIGHT_BOLD
-      &:after
-        position                          : absolute
-        content                           : "*"
-        color                             : THEME
-      > span
-        font-weight                       : FONT_WEIGHT_NORMAL
-    > h4
-      font-weight                         : FONT_WEIGHT_NORMAL
+body[data-page="landing"]
+  > aside
+    z-index                                 : 2
+    position                                : fixed
+    top                                     : 0
+    bottom                                  : 0
+    left                                    : 0
+    width                                   : (6 * UNIT)
+    height                                  : 100%
+    background-color                        : darken(BACKGROUND, 25%)
+    transform                                 translateX(-100%)
+    transition                                all ANIMATION_DURATION ANIMATION_EASE
+    > button
+      padding                               : 0
+      border                                : none
+      position                              : absolute
+      display                               : block
+      top                                   : 0px
+      right                                 : 0px
+      width                                 : SIZE = (UNIT / 1.25)
+      height                                : SIZE
+      font-size                             : FONT_SIZE_NORMAL
+      text-align                            : center
+      line-height                           : SIZE
+      color                                 : COLOR
+      background-color                      : WHITE
+    > nav
+      > a
+        margin                              : SPACE 0
+        font-size                           : FONT_SIZE_SMALL
+        font-weight                         : FONT_WEIGHT_BOLD
+        text-transform                      : Uppercase
+        color                               : WHITE
+        &:hover, &.active
+          color                             : THEME
+    &.active
+      transform                               translateX(0%)
+
+
+  > header
+    z-index                                 : 1980
+    position                                : fixed
+    left                                    : 0
+    top                                     : 0
+    width                                   : 100%
+    height                                  : HEIGHT = (2 * UNIT)
+    > *
+      line-height: HEIGHT
+      > a
+        font-size                           : (UNIT / 1.5)
+        font-weight                         : FONT_WEIGHT_BOLD
+        color                               : WHITE
+  > article
+    &#intro
+      height                                : 100vh
+      text-align                            : center
+      overflow                              : hidden
+      > video
+        z-index: -1
+        position                            : absolute
+        left                                : 0
+        top                                 : 0
+        width                               : 100%
+      > button
+        z-index                             : 0
+        position                            : fixed
+        top                                 : 3vw
+        left                                : 7.5vw
+        padding                             : 0 SPACE
+        font-size                           : (1.9 * FONT_SIZE_NORMAL)
+        color                               : WHITE
+        opacity                             : 0.65
+        transition                            all ANIMATION_DURATION ANIMATION_EASE
+        &:hover
+          color                             : THEME
+          opacity                           : 1
+      > h1
+        max-width                           : 60vw
+        font-size                           : (2.5 * UNIT)
+        font-weight                         : FONT_WEIGHT_BOLD
+      > small
+        position                            : absolute
+        left                                : 0
+        bottom                              : SPACE
+        width                               : 100%
+        opacity                             : 0.75
+        transition                            all ANIMATION_DURATION ANIMATION_EASE
+        &.hide
+          opacity                           : 0
+          transform                           translateY(100%)
+
+    // .box
+    //   width                                 : 50vw
+    //   height                                : 50vw
+    //   h1
+    //     font-size                           : (2 * UNIT)
+
+    h2
+      font-weight: FONT_WEIGHT_BOLD
+    > .container
+      padding                               : (1.5 * UNIT) 0
+      > p
+        font-size                           : FONT_SIZE_BIG
+
+  > footer
+    padding                                 : UNIT 0

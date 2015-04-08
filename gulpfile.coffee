@@ -14,13 +14,16 @@ source =
   coffee: [ "source/app.coffee"
             "source/app.*.coffee"]
   styl  : [ "bower_components/STYLmethods/vendor.styl"
+            "source/styles/__constants__.styl"
             "source/styles/flexo.theme.styl"
             "source/styles/app.*.styl"]
   html  : [ "./*.html" ]
   dest  : "assets/"
 
 thirds =
-  js    :[ "bower_components/jquery/dist/jquery.min.js"]
+  js    :[
+            "bower_components/jquery/dist/jquery.min.js"
+            "bower_components/stellar/jquery.stellar.min.js"]
   css   :[ "bower_components/flexo/dist/flexo.css"]
   fonts :[]
 

@@ -3,9 +3,16 @@ window.soyjavi = soyjavi = version: "1.02.06"
 $ ->
   soyjavi.dom =
     document: $ document
+    aside   : $ "aside"
     landing : $ ".landing"
     text    : $ ".landing > *:not(.more)"
-    more    : $ ".landing > .more"
+    more    : $ ".landing > small"
+
+  $(window).stellar()
+
+  $("[data-action=aside]").on "click", ->
+    soyjavi.dom.aside.toggleClass "active"
+
 
   $(document).on "scroll", (event) ->
     percent = (soyjavi.dom.document.scrollTop() * 100) / soyjavi.dom.landing.height()

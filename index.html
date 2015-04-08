@@ -15,11 +15,42 @@
     <link rel="stylesheet" href="/assets/css/zpath.site.css">
   </head>
 
-  <body>
-    <section class="bck dots" data-flex="vertical center">
-      <h1>z<span>path</span></h1>
-      <h5 class="color theme">our adventure begins in March</h5>
-    </section>
+  <body data-page="landing">
+    <!--
+    <aside data-flex="vertical grow">
+      <button data-action="aside" class="icon cross"></button>
+      <nav data-flex-grow="max" data-flex="vertical center" class="align center">
+        <a href="#intro">Home</a>
+        <a href="#intro">Overview</a>
+        <a href="#intro">Services</a>
+        <a href="#intro">Portfolio</a>
+        <a href="#intro">About us</a>
+        <a href="#intro">Contact us</a>
+      </nav>
+    </aside>
+    -->
+
+    <header>
+      <div class="container"  data-flex="horizontal wrap">
+        <a href="/" class="logo">zeta<span class="color theme">path</span></a>
+        <!--
+        <nav data-flex-grow="max" class="align center">
+          <a href="work">Work</a>
+          <a href="work">Agency</a>
+        </nav>
+        <button>Start your project</button>
+        -->
+      </div>
+    </header>
+
+    <article id="intro" class="bck dots " data-flex="vertical center" data-stellar-background-ratio="0.5">
+      <video src="./assets/video/landing.mov" preload autoplay loop></video>
+      <!--
+      <button data-action="aside" class="icon menu"></button>
+      -->
+      <h1>A <span class="color theme">Digital</span> Product Design <span class="color theme">Agency</span></h1>
+      <small class="align center">coming <strong class="color theme">soon</strong>...</small>
+    </article>
 
     <script src="/assets/js/zpath.site.thirds.js"></script>
     <script src="/assets/js/zpath.site.js"></script>
