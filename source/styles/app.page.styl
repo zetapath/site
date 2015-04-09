@@ -1,41 +1,4 @@
-body[data-page="landing"]
-  > aside
-    z-index                                 : 2
-    position                                : fixed
-    top                                     : 0
-    bottom                                  : 0
-    left                                    : 0
-    width                                   : (6 * UNIT)
-    height                                  : 100%
-    background-color                        : darken(BACKGROUND, 25%)
-    transform                                 translateX(-100%)
-    transition                                all ANIMATION_DURATION ANIMATION_EASE
-    > button
-      padding                               : 0
-      border                                : none
-      position                              : absolute
-      display                               : block
-      top                                   : 0px
-      right                                 : 0px
-      width                                 : SIZE = (UNIT / 1.25)
-      height                                : SIZE
-      font-size                             : FONT_SIZE_NORMAL
-      text-align                            : center
-      line-height                           : SIZE
-      color                                 : COLOR
-      background-color                      : WHITE
-    > nav
-      > a
-        margin                              : SPACE 0
-        font-size                           : FONT_SIZE_SMALL
-        font-weight                         : FONT_WEIGHT_BOLD
-        text-transform                      : Uppercase
-        color                               : WHITE
-        &:hover, &.active
-          color                             : THEME
-    &.active
-      transform                               translateX(0%)
-
+body[data-page]
   > header, > footer
     padding                                 : 0 UNIT
 
@@ -68,7 +31,7 @@ body[data-page="landing"]
       top                                   : 0
       left                                  : 0
       width                                 : 100%
-      height                                : 100vh
+      height                                : INTRO_HEIGHT
       text-align                            : center
       overflow                              : hidden
       > video
@@ -111,16 +74,18 @@ body[data-page="landing"]
         transform                           translateY(-25%)
 
     &#we
-      margin-top                            : 100vh
+      margin-top                            : INTRO_HEIGHT
+
     h2
-      font-weight: FONT_WEIGHT_BOLD
+      font-weight                           : FONT_WEIGHT_BOLD
+      text-transform                        : Capitalize
     > .container
-      padding                               : (1.5 * UNIT) 0
-      text-align                            : center
       > p
         font-size                           : FONT_SIZE_BIG
+
   > footer
     line-height                             : (1.5 * UNIT)
+    font-weight                             : FONT_WEIGHT_BOLD
     > *
       opacity                               : 0.5
     > nav > a

@@ -1,0 +1,20 @@
+body[data-page="work"]
+  > article
+    INTRO_HEIGHT = (INTRO_HEIGHT * 0.85) !important
+    &:nth-child(3)
+      margin-top                            : INTRO_HEIGHT
+    &:nth-child(n+3)
+      height: INTRO_HEIGHT
+
+    &.work
+      > .container
+        padding                             : (2 * UNIT) 0
+        > *
+          max-width                         : 65%
+        > strong
+          font-size                         : (1.3 * FONT_SIZE_NORMAL)
+        > h2
+          margin                            : (3 * SPACE) 0
+      //
+      // &:hover
+      //   background-color: red
