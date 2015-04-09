@@ -36,20 +36,38 @@ body[data-page="landing"]
     &.active
       transform                               translateX(0%)
 
+  > header, > footer
+    padding                                 : 0 UNIT
 
   > header
     z-index                                 : 1980
     position                                : fixed
     left                                    : 0
     top                                     : 0
-    width                                   : 100%
+    right                                   : 0
     height                                  : HEIGHT = (2 * UNIT)
-    > *
-      line-height: HEIGHT
+    line-height                             : HEIGHT
+    transition                                all ANIMATION_DURATION ANIMATION_EASE
+    &.fixed
+      background                            : url("/assets/img/bck.dots.png") repeat top left
+    > *:not(nav)
+      width : 15%
+    > a
+      font-size                             : (UNIT / 1.5)
+      font-weight                           : FONT_WEIGHT_BOLD
+      color                                 : WHITE
+    > nav
       > a
-        font-size                           : (UNIT / 1.5)
-        font-weight                         : FONT_WEIGHT_BOLD
         color                               : WHITE
+        transition                            all ANIMATION_DURATION
+        &:not(.button)
+          padding                           : 0 SPACE
+        &.button
+          &:hover, &:visited
+            color                           : THEME
+            border-color                    : WHITE
+            background-color                : WHITE
+
   > article
     &#intro
       height                                : 100vh
@@ -75,32 +93,43 @@ body[data-page="landing"]
           color                             : THEME
           opacity                           : 1
       > h1
-        max-width                           : 60vw
-        font-size                           : (2.5 * UNIT)
-        font-weight                         : FONT_WEIGHT_BOLD
-      > small
+        max-width                           : 50vw
+        font-size                           : (2 * UNIT)
+        font-weight                         : FONT_WEIGHT_EXTRABOLD
+        transition                            all ANIMATION_DURATION ANIMATION_EASE
+      > a
         position                            : absolute
         left                                : 0
-        bottom                              : SPACE
+        bottom                              : (2 * SPACE)
         width                               : 100%
-        opacity                             : 0.75
+        font-size                           : FONT_SIZE_BIG
+        color                               : WHITE
+        opacity                             : 0.5
         transition                            all ANIMATION_DURATION ANIMATION_EASE
-        &.hide
-          opacity                           : 0
-          transform                           translateY(100%)
-
-    // .box
-    //   width                                 : 50vw
-    //   height                                : 50vw
-    //   h1
-    //     font-size                           : (2 * UNIT)
+        animation                             bounce (1.5 * ANIMATION_DURATION) infinite ANIMATION_EASE alternate
+        &:hover
+          opacity                           : 1
+      .hide
+        opacity                           : 0
+        transform                           translateY(-25%)
 
     h2
       font-weight: FONT_WEIGHT_BOLD
     > .container
       padding                               : (1.5 * UNIT) 0
+      text-align                            : center
       > p
         font-size                           : FONT_SIZE_BIG
-
   > footer
-    padding                                 : UNIT 0
+    line-height                             : (1.5 * UNIT)
+    > *
+      opacity                               : 0.5
+    > nav > a
+      margin-left                           : SPACE
+      font-size                             : FONT_SIZE_BIG
+
+@keyframes bounce
+  0%
+    transform                                 translateY(0)
+  100%
+    transform                                 translateY(-35%)
