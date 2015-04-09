@@ -57,27 +57,25 @@ body[data-page="landing"]
       font-weight                           : FONT_WEIGHT_BOLD
       color                                 : WHITE
     > nav
-      > a
+      > a:not(.button)
         color                               : WHITE
-        transition                            all ANIMATION_DURATION
-        &:not(.button)
-          padding                           : 0 SPACE
-        &.button
-          &:hover, &:visited
-            color                           : THEME
-            border-color                    : WHITE
-            background-color                : WHITE
+        padding                             : 0 SPACE
 
   > article
     &#intro
+      z-index : -1
+      position                              : fixed
+      top                                   : 0
+      left                                  : 0
+      width                                 : 100%
       height                                : 100vh
       text-align                            : center
       overflow                              : hidden
       > video
-        z-index: -1
+        z-index                             : -1
         position                            : absolute
-        left                                : 0
         top                                 : 0
+        left                                : 0
         width                               : 100%
       > button
         z-index                             : 0
@@ -86,7 +84,6 @@ body[data-page="landing"]
         left                                : 7.5vw
         padding                             : 0 SPACE
         font-size                           : (1.9 * FONT_SIZE_NORMAL)
-        color                               : WHITE
         opacity                             : 0.65
         transition                            all ANIMATION_DURATION ANIMATION_EASE
         &:hover
@@ -100,19 +97,21 @@ body[data-page="landing"]
       > a
         position                            : absolute
         left                                : 0
-        bottom                              : (2 * SPACE)
+        bottom                              : (3 * SPACE)
         width                               : 100%
-        font-size                           : FONT_SIZE_BIG
+        font-size                           : (1.5 * FONT_SIZE_NORMAL)
         color                               : WHITE
-        opacity                             : 0.5
+        opacity                             : 0.6
         transition                            all ANIMATION_DURATION ANIMATION_EASE
         animation                             bounce (1.5 * ANIMATION_DURATION) infinite ANIMATION_EASE alternate
         &:hover
           opacity                           : 1
       .hide
-        opacity                           : 0
+        opacity                             : 0
         transform                           translateY(-25%)
 
+    &#we
+      margin-top                            : 100vh
     h2
       font-weight: FONT_WEIGHT_BOLD
     > .container

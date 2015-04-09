@@ -19,11 +19,6 @@ body
     background-color          : WHITE
   &.grey
     background-color          : darken(WHITE, 5%)
-
-
-  &.theme
-    color                     : WHITE
-    background-color          : THEME
   &.dots
     z-index                   : 0
     color                     : WHITE
@@ -55,10 +50,19 @@ body
 
 // -- BUTTON -------------------------------------------------------------------
 .button, button, input[type="submit"], input[type="reset"], input[type="button"]
-  border                      : solid 1px WHITE
-  &:hover, &:focus
-    color                     : #333
-    border-color              : #888
+  border                      : none
+  &.white
+    color                     : WHITE
+    border                    : solid 1px WHITE
+    &:hover, &:visited
+      color                   : THEME
+      background-color        : WHITE
+  &.theme
+    color                     : THEME
+    border                    : solid 1px THEME
+    &:hover, &:visited
+      color                   : WHITE
+      background-color        : THEME
   &.primary
     border                    : 1px solid #bbb
     color                     : WHITE

@@ -17,20 +17,18 @@ $ ->
 
   $(document).on "scroll", (event) ->
     percent = (soyjavi.dom.document.scrollTop() * 100) / soyjavi.dom.landing.height()
-    console.log "% #{percent}"
-    if percent > 10
+    if percent > 1
       soyjavi.dom.more.addClass "hide"
     else
       soyjavi.dom.more.removeClass "hide"
-    if percent > 25
+    if percent > 35
       soyjavi.dom.text.addClass "hide"
     else
       soyjavi.dom.text.removeClass "hide"
-    if percent > 80
+    if percent > 85
       soyjavi.dom.header.addClass "fixed"
     else
       soyjavi.dom.header.removeClass "fixed"
-
 
 
   $('a[href*=#]:not([href=#])').click ->
