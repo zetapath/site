@@ -11,6 +11,7 @@ $ ->
     text          : $ "#intro > h1"
     more          : $ "#intro > a"
     articles      : (id: $(el).attr("id"), px: el.offsetTop for el in $ "article[data-content]")
+    maps          : $ ".map > iframe"
     activeArticle : ->
       px = zpath.document.scrollTop()
       px += (zpath.height / 1.75)
@@ -21,7 +22,6 @@ $ ->
           break
 
   # -- Init UI
-  console.log "articles", zpath.articles
   do zpath.activeArticle
 
   # -- Page scrolling
@@ -55,6 +55,13 @@ $ ->
   # -- Mobile Menu
   $("[data-action=aside]").on "click", -> zpath.aside.toggleClass "active"
 
-  # -- Clocks
+  # -- Timezones
   window.clock.set "[data-control='clock'][data-timezone='Europe/London']"
   window.clock.set "[data-control='clock'][data-timezone='Asia/Bangkok']"
+  $('#location > .container > [data-column]').click (event) ->
+    el = $ event.delegateTarget
+    timezone = el.children("[data-timezone]").attr "data-timezone"
+    zpath.maps.filter("[data-timezone='#{timezone}']")
+      .addClass("active")
+      .siblings().removeClass("active")
+    el.addClass("active").siblings().removeClass("active")

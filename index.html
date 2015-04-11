@@ -116,9 +116,12 @@
 
 <!--  LOCATION -->
     <article id="location" class="bck white">
-      <div class="map"></div>
+      <div class="map" data-flex="horizontal wrap">
+        <iframe frameBorder='0' class="active" src='https://a.tiles.mapbox.com/v4/soyjavi.ln0djcnn/attribution.html?access_token=pk.eyJ1Ijoic295amF2aSIsImEiOiJMVjUxV1hjIn0.Cmsx5TE3grlCl69EjIeAUA' data-timezone="Europe/London"></iframe>
+        <iframe frameBorder='0' src='https://a.tiles.mapbox.com/v4/soyjavi.ln0cfi58/attribution.html?access_token=pk.eyJ1Ijoic295amF2aSIsImEiOiJMVjUxV1hjIn0.Cmsx5TE3grlCl69EjIeAUA' data-timezone="Asia/Bangkok"></iframe>
+      </div>
       <div class="container">
-        <div data-column="6" class="align left">
+        <div data-column="6" class="align left active">
           <div data-control="clock" data-timezone="Europe/London">
             <div class="steeple center"></div>
             <div class="steeple seconds"></div>

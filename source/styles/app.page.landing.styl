@@ -16,16 +16,28 @@ body[data-page="landing"]
 
     &#location
       > .map
-        background-color                    : BACKGROUND
-        height                              : 75vh
+        height                              : 60vh
+        > *
+          width                             : 100%
+          &:not(.active)
+            display                         : none
+
       > .container
         padding                             : UNIT 0
-        > [data-column] > *
-          float                             : left
-          vertical-align                    : bottom
-        [data-control='clock']
-          margin-right                      : (UNIT / 1.25)
-        strong
-          font-size: FONT_SIZE_BIG
-        p, ul
-          margin : 0
+        > [data-column]
+          cursor                            : pointer
+          &.active
+            opacity                         : 1
+          &:not(.active)
+            opacity                         : 0.5
+            &:focus
+              opacity                       : 0.75
+          > *
+            float                           : left
+            vertical-align                  : bottom
+          [data-control='clock']
+            margin-right                    : (UNIT / 1.25)
+          strong
+            font-size                       : FONT_SIZE_BIG
+          p, ul
+            margin                          : 0
