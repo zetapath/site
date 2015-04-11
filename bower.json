@@ -13,7 +13,6 @@
   "dependencies": {
     "flexo": "*",
     "jquery": "*",
-    "stellar": "*",
     "stylmethods": "*",
     "moment-timezone": "~0.3.1"
   }
