@@ -14,15 +14,22 @@ body[data-page]
     &.fixed
       background                            : url("/assets/img/bck.dots.png") repeat top left
     > *:not(nav)
-      width : 15%
+      width                                 : 15%
     > a
       font-size                             : (UNIT / 1.5)
       font-weight                           : FONT_WEIGHT_BOLD
       color                                 : WHITE
     > nav
+      height: UNIT
       > a:not(.button)
+        margin                              : 0 (2 * SPACE)
+        padding-bottom                      : SPACE
         color                               : WHITE
-        padding                             : 0 SPACE
+        opacity                             : 0.6
+        transition                            all ANIMATION_DURATION
+        &:hover, &.active
+          opacity                           : 1
+          box-shadow                          inset 0 -2px WHITE
 
   > article
     &#intro
@@ -34,6 +41,8 @@ body[data-page]
       height                                : INTRO_HEIGHT
       text-align                            : center
       overflow                              : hidden
+      &.dots:before
+        background-color                    : alpha(THEME, 50%)
       > video
         z-index                             : -1
         position                            : absolute
@@ -77,11 +86,14 @@ body[data-page]
       margin-top                            : INTRO_HEIGHT
 
     h2
+      margin-bottom                         : 0
       font-weight                           : FONT_WEIGHT_BOLD
       text-transform                        : Capitalize
     > .container
       > p
         font-size                           : FONT_SIZE_BIG
+      + .container
+        padding-top                         : 0
 
   > footer
     line-height                             : (1.5 * UNIT)

@@ -1,20 +1,52 @@
 body[data-page="work"]
+  INTRO_HEIGHT = (INTRO_HEIGHT * 0.875) !important
   > article
-    INTRO_HEIGHT = (INTRO_HEIGHT * 0.85) !important
+    &#intro
+      > a
+        position                            : absolute
+        top                                 : (INTRO_HEIGHT - (1.5 * UNIT))
+        bottom                              : auto
     &:nth-child(3)
       margin-top                            : INTRO_HEIGHT
-    &:nth-child(n+3)
-      height: INTRO_HEIGHT
-
     &.work
+      height                                : INTRO_HEIGHT
+      background-color                      : BACKGROUND
+      &.dots:before
+        transition                            opacity (2 * ANIMATION_DURATION)
       > .container
         padding                             : (2 * UNIT) 0
         > *
           max-width                         : 65%
+          transition                          all (1 * ANIMATION_DURATION)
+
         > strong
-          font-size                         : (1.3 * FONT_SIZE_NORMAL)
+          display                           : block
+          font-size                         : (1.4 * FONT_SIZE_NORMAL)
+          transition-delay                    0
         > h2
-          margin                            : (3 * SPACE) 0
-      //
-      // &:hover
-      //   background-color: red
+          margin                            : (2 * SPACE) 0 (3 * SPACE) 0
+          transition-delay                    (ANIMATION_DURATION / 3)
+        > .button
+          height                            : HEIGHT = (1.45 * UNIT) !important
+          line-height                       : HEIGHT
+          transition-delay                    ((ANIMATION_DURATION / 3) * 2)
+
+      &:not(.active).dots
+        &:before
+          opacity                           : 0.25
+        > .container > *
+          opacity                           : 0
+          transform                           translateY(32px)
+      &.active.dots
+        &:before
+          opacity                           : 1
+          transform                           0
+        > .container
+          > *
+            opacity                         : 1
+            transform                         translateY(0%)
+
+    &:not(.work)
+      > .container
+        padding                             : (1.5 * UNIT) 0
+        text-align                          : center

@@ -12,6 +12,7 @@ body
   position                    : relative
   margin                      : 0
   background-size             : cover !important
+  background-position : 100% 0%
   &.dark
     color                     : WHITE
     background-color          : DARK
@@ -22,10 +23,13 @@ body
   &.oizio
     background-image          : url("https://oiz.io/assets/img/landing.720p.jpg")
   &.filmit
-    background-color          : #ffc414
+    background-color          : #ffc414 !important
   &.omnia
     background-image          : url("http://omniacafe.com/assets/img/background.jpg")
-
+  &.the8848
+    background-image          : url("https://the8848.co/img/background.jpg")
+  &.farmstory
+    background-image          : url("http://farmstoryhouse.com/assets/img/background-landing.jpg")
   &.dots
     z-index                   : 0
     color                     : WHITE
@@ -58,10 +62,13 @@ body
 // -- BUTTON -------------------------------------------------------------------
 .button, button, input[type="submit"], input[type="reset"], input[type="button"]
   border                      : none
+  > span
+    margin-left               : (SPACE / 2)
   &.white
-    color                     : WHITE
     border                    : solid 1px WHITE
-    &:hover, &:visited
+    &, &:visited
+      color                   : WHITE
+    &:hover
       color                   : THEME
       background-color        : WHITE
   &.theme
@@ -70,15 +77,6 @@ body
     &:hover, &:visited
       color                   : WHITE
       background-color        : THEME
-  &.primary
-    border                    : 1px solid #bbb
-    color                     : WHITE
-    background-color          : THEME
-    border-color              : darken(THEME, 5%)
-    &:hover, &:focus
-      color                   : WHITE
-      background-color        : darken(THEME, 10%)
-      border-color            : darken(THEME, 15%)
 
 // -- FORM ---------------------------------------------------------------------
 input[type="email"], input[type="search"], input[type="text"], input[type="tel"],

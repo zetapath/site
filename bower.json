@@ -1,19 +1,20 @@
 {
-    "name": "zetapath.com",
-    "version": "1.0.0",
-    "directory": "dependencies/bower",
-    "componentsDirectory": "dependencies/bower",
-    "ignore": [
-            "**/.*",
-            "node_modules",
-            "bower_components",
-            "test",
-            "tests"
-    ],
-    "dependencies": {
-        "flexo"            : "*",
-        "jquery"           : "*",
-        "stellar"          : "*",
-        "stylmethods"      : "*"
-    }
+  "name": "zetapath.com",
+  "version": "1.0.0",
+  "directory": "dependencies/bower",
+  "componentsDirectory": "dependencies/bower",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexo": "*",
+    "jquery": "*",
+    "stellar": "*",
+    "stylmethods": "*",
+    "moment-timezone": "~0.3.1"
+  }
 }

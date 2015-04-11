@@ -23,7 +23,8 @@ source =
 thirds =
   js    :[
             "bower_components/jquery/dist/jquery.min.js"
-            "bower_components/stellar/jquery.stellar.min.js"]
+            "bower_components/moment/min/moment.min.js"
+            "bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js"]
   css   :[ "bower_components/flexo/dist/flexo.css"]
   fonts :[]
 

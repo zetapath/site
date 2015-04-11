@@ -1,36 +1,49 @@
-window.soyjavi = soyjavi = version: "1.02.06"
+"use strict"
 
 $ ->
-  soyjavi.dom =
-    document: $ document
-    aside   : $ "aside"
-    header  : $ "header"
-    landing : $ "#intro"
-    text    : $ "#intro > h1"
-    more    : $ "#intro > a"
+  window.zpath =
+    document      : $ document
+    height        : window.innerHeight or document.documentElement.offsetHeight
+    width         : window.innerWidth or document.documentElement.offsetWidth
+    aside         : $ "aside"
+    header        : $ "header"
+    landing       : $ "#intro"
+    text          : $ "#intro > h1"
+    more          : $ "#intro > a"
+    articles      : (id: $(el).attr("id"), px: el.offsetTop for el in $ "article[data-content]")
+    activeArticle : ->
+      px = zpath.document.scrollTop()
+      px += (zpath.height / 1.75)
 
-  $(window).stellar()
+      for article, index in zpath.articles when px >= article.px
+        unless px >= zpath.articles[index + 1].px #or (index is (zpath.articles.length - 1))
+          $("article##{article.id}").addClass("active").siblings().removeClass("active")
+          break
 
-  $("[data-action=aside]").on "click", ->
-    soyjavi.dom.aside.toggleClass "active"
+  # -- Init UI
+  console.log "articles", zpath.articles
+  do zpath.activeArticle
 
-
+  # -- Page scrolling
   $(document).on "scroll", (event) ->
-    percent = (soyjavi.dom.document.scrollTop() * 100) / soyjavi.dom.landing.height()
+    px = zpath.document.scrollTop()
+    percent = (px * 100) / zpath.landing.height()
+
     if percent > 1
-      soyjavi.dom.more.addClass "hide"
+      zpath.more.addClass "hide"
     else
-      soyjavi.dom.more.removeClass "hide"
+      zpath.more.removeClass "hide"
     if percent > 35
-      soyjavi.dom.text.addClass "hide"
+      zpath.text.addClass "hide"
     else
-      soyjavi.dom.text.removeClass "hide"
+      zpath.text.removeClass "hide"
     if percent > 85
-      soyjavi.dom.header.addClass "fixed"
+      zpath.header.addClass "fixed"
     else
-      soyjavi.dom.header.removeClass "fixed"
+      zpath.header.removeClass "fixed"
+    do zpath.activeArticle
 
-
+  # -- Smooth Scroll
   $('a[href*=#]:not([href=#])').click ->
     if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
       target = $(@hash)
@@ -38,3 +51,10 @@ $ ->
       if target.length
         $('html,body').animate scrollTop: target.offset().top, 450
         false
+
+  # -- Mobile Menu
+  $("[data-action=aside]").on "click", -> zpath.aside.toggleClass "active"
+
+  # -- Clocks
+  window.clock.set "[data-control='clock'][data-timezone='Europe/London']"
+  window.clock.set "[data-control='clock'][data-timezone='Asia/Bangkok']"

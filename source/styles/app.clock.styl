@@ -1,0 +1,138 @@
+[data-control="clock"]
+  SPHERE                                    = #f9f9f9
+  SPHERE_NIGHT                              = #1a1d24
+  STEEPLE                                   = COLOR
+  STEEPLE_NIGHT                             = #aaa
+  STEEPLE_SECONDS                           = #c40206
+  SIZE                                      = (2.25 * UNIT)
+
+  position                                  : relative
+  height                                    : SIZE
+  width                                     : SIZE
+  background                                : SPHERE
+  border-radius                             : 50%
+  > *
+    position                                : absolute
+    left                                    : 50%
+    top                                     : 50%
+  > .steeple
+    transform                               rotate(0deg)
+    transition                              all ANIMATION_DURATION
+    &.center
+      z-index                               : 3
+      height                                : SIZE = (SIZE / 12)
+      width                                 : SIZE
+      margin                                : (-(SIZE) / 2) 0 0 (-(SIZE) / 2)
+      border-radius                         : 50%
+      &:after
+        SIZE = (SIZE / 2)
+        content                             : ""
+        position                            : absolute
+        display                             : block
+        left                                : (SIZE / 2)
+        top                                 : (SIZE / 2)
+        width                               : SIZE
+        height                              : SIZE
+        border-radius                       : 50%
+        background-color                    : STEEPLE_SECONDS
+
+    &.seconds
+      z-index                               : 4
+      height                                : SIZE = (SIZE / 2.65)
+      width                                 : 2px
+      margin                                : -(SIZE) 0 0 -1px
+      background                            : STEEPLE_SECONDS
+      border-radius                         : (SIZE / 2)
+      transform-origin                        1px SIZE
+    &.minutes
+      z-index                               : 2
+      height                                : SIZE = (SIZE / 2.75)
+      width                                 : 4px
+      margin                                : -(SIZE) 0 0 -2px
+      border-radius                         : (SIZE / 10)
+      transform-origin                        2px SIZE
+    &.hours
+      z-index                               : 1
+      height                                : SIZE = (SIZE / 4)
+      width                                 : 4px
+      margin                                : -(SIZE) 0 0 -2px
+      border-radius                         : (SIZE / 5)
+      transform-origin                        2px SIZE
+    &:not(.seconds)
+      background                            : STEEPLE
+
+  > .text, > .ticks
+    color                                   : STEEPLE
+
+  > .text
+    position                                : absolute
+    display                                 : block
+    width                                   : 100%
+    left                                    : 0
+    top                                     : (SIZE / 1.5)
+    font-size                               : (SIZE / 8.5)
+    font-weight                             : FONT_WEIGHT_BOLD
+    text-align                              : center
+    opacity                                 : 0.75
+
+  > .ticks
+    GAP = (SIZE * 0.15)
+    SIZE = (SIZE - GAP)
+    z-index                               : 4
+    position                              : absolute
+    left                                  : (GAP / 2)
+    top                                   : (GAP / 2)
+    width                                 : SIZE
+    height                                : SIZE
+    font-size                             : (GAP * 1.5)
+    font-weight                           : FONT_WEIGHT_BOLD
+    > li
+      margin                              : -(GAP / 2)
+      &, &:before, &:after
+        position                          : absolute
+        height                            : GAP
+        width                             : GAP
+        line-height                       : GAP
+        text-align                        : center
+      RADIUS = (GAP / 2.5)
+      &:before, &:after
+        content                           : "·"
+        font-size                         : GAP
+      &:nth-child(1)
+        left                              : 50%
+        top                               : 0
+        &:before, &:after
+          top                             : RADIUS
+      &:nth-child(2)
+        right                             : 0
+        top                               : 50%
+        &:before, &:after
+          right                           : RADIUS
+      &:nth-child(3)
+        left                              : 50%
+        bottom                            : 0
+        &:before, &:after
+          bottom                          : RADIUS
+      &:nth-child(4)
+        left                              : 0
+        top                               : 50%
+        &:before, &:after
+          left                            : RADIUS
+      SPACE = 1.35
+      &:nth-child(2), &:nth-child(4)
+        &:before
+          top                             : -(GAP * SPACE)
+        &:after
+          top                             : (GAP * SPACE)
+      &:nth-child(1), &:nth-child(3)
+        &:before
+          left                            : -(GAP * SPACE)
+        &:after
+          left                            : (GAP * SPACE)
+
+  &.night
+    background-color                      : lighten(SPHERE_NIGHT, 5%)
+    > .steeple:not(.seconds)
+      background                          : STEEPLE_NIGHT
+    > .text, > .ticks
+      color                               : STEEPLE_NIGHT

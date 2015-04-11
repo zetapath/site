@@ -2,9 +2,30 @@ body[data-page="landing"]
   > article
     &#intro
       height                                : 100vh !important
-      &.dots:before
-        background-color                    : alpha(THEME, 50%)
-
     > .container
       padding                               : (1.5 * UNIT) 0
       text-align                            : center
+
+    ul
+      list-style                            : none
+      font-size                             : FONT_SIZE_BIG
+      > *
+        line-height                         : (1.25 * UNIT)
+      > li
+        opacity                             : 0.6
+
+    &#location
+      > .map
+        background-color                    : BACKGROUND
+        height                              : 75vh
+      > .container
+        padding                             : UNIT 0
+        > [data-column] > *
+          float                             : left
+          vertical-align                    : bottom
+        [data-control='clock']
+          margin-right                      : (UNIT / 1.25)
+        strong
+          font-size: FONT_SIZE_BIG
+        p, ul
+          margin : 0
