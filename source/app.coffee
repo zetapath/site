@@ -15,9 +15,8 @@ $ ->
     activeArticle : ->
       px = zpath.document.scrollTop()
       px += (zpath.height / 1.75)
-
       for article, index in zpath.articles when px >= article.px
-        unless px >= zpath.articles[index + 1].px #or (index is (zpath.articles.length - 1))
+        unless px >= zpath.articles[index + 1]?.px
           $("article##{article.id}").addClass("active").siblings().removeClass("active")
           break
 
@@ -28,7 +27,6 @@ $ ->
   $(document).on "scroll", (event) ->
     px = zpath.document.scrollTop()
     percent = (px * 100) / zpath.landing.height()
-
     if percent > 1
       zpath.more.addClass "hide"
     else

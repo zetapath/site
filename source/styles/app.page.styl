@@ -13,23 +13,17 @@ body[data-page]
     transition                                all ANIMATION_DURATION ANIMATION_EASE
     &.fixed
       background                            : url("/assets/img/bck.dots.png") repeat top left
-    > *:not(nav)
-      width                                 : 15%
     > a
       font-size                             : (UNIT / 1.5)
       font-weight                           : FONT_WEIGHT_BOLD
       color                                 : WHITE
     > nav
-      height: UNIT
-      > a:not(.button)
-        margin                              : 0 (2 * SPACE)
-        padding-bottom                      : SPACE
-        color                               : WHITE
-        opacity                             : 0.6
-        transition                            all ANIMATION_DURATION
-        &:hover, &.active
-          opacity                           : 1
-          box-shadow                          inset 0 -2px WHITE
+      > .button
+        padding                             : 0 (2 * SPACE)
+        &.transparent
+          color                             : WHITE
+          &:hover
+            background-color                : alpha(WHITE, 25%)
 
   > article
     &#intro
@@ -94,6 +88,10 @@ body[data-page]
         font-size                           : FONT_SIZE_BIG
       + .container
         padding-top                         : 0
+
+      button
+        height                            : HEIGHT = (1.45 * UNIT) !important
+        line-height                       : HEIGHT
 
   > footer
     line-height                             : (1.5 * UNIT)

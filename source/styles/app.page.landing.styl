@@ -5,7 +5,13 @@ body[data-page="landing"]
     > .container
       padding                               : (1.5 * UNIT) 0
       text-align                            : center
-
+      h2
+        margin-bottom                       : (UNIT / 2)
+      p
+        margin                              : 0
+        font-size                           : FONT_SIZE_BIG
+        line-height                         : (1.5 * FONT_SIZE_BIG)
+        color                               : lighten(COLOR, 20%)
     ul
       list-style                            : none
       font-size                             : FONT_SIZE_BIG
@@ -14,6 +20,7 @@ body[data-page="landing"]
       > li
         opacity                             : 0.6
 
+// -- LOCATION
     &#location
       > .map
         height                              : 60vh
@@ -39,5 +46,6 @@ body[data-page="landing"]
             margin-right                    : (UNIT / 1.25)
           strong
             font-size                       : FONT_SIZE_BIG
-          p, ul
-            margin                          : 0
+          p
+            font-size                       : FONT_SIZE_NORMAL
+            line-height                     : (1.5 * FONT_SIZE_NORMAL)

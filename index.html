@@ -32,10 +32,8 @@
 
     <header data-flex="horizontal wrap">
       <a href="/" class="logo">zeta<span class="color theme">path</span></a>
-      <nav data-flex-grow="max" class="align center">
-        <a href="/work">Work</a>
-      </nav>
-      <nav>
+      <nav data-flex-grow="max" class="align right">
+        <a href="/work" class="button transparent">Last Works</a>
         <a href="#contact" class="button white">Start your project</a>
       </nav>
     </header>
@@ -44,51 +42,32 @@
       <video  preload loop="loop" autoplay="autoplay" poster="http://">
         <source src="../assets/video/landing.mov">
       </video>
-      <!--
-      <button data-action="aside" class="icon menu"></button>
-      -->
+      <!-- <button data-action="aside" class="icon menu"></button> -->
       <h1>A <span class="color theme">Digital</span> Product Design <span class="color theme">Agency</span></h1>
       <a href="#we" class="icon down"></a>
     </article>
 
     <article id="we" class="bck white">
       <div class="container">
-        <h2>We Help Startups Take Their Next Steps</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <img src="http://" />
-      </div>
-    </article>
-
-    <article class="bck grey">
-      <div class="container">
-        <h2>We Design Digital Products to Help Businesses Grow</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <img src="http://" />
-      </div>
-    </article>
-
-    <article id="clients" class="bck white">
-      <div class="container">
-        <h2>We love our clients</h2>
-        <div class="thumbnails" data-flex="horizontal wrap">
-          <img src="http://" />
-          <img src="http://" />
-          <img src="http://" />
-          <img src="http://" />
-          <img src="http://" />
-          <img src="http://" />
+        <div data-column="8" data-offset="2">
+          <h2>We Design Digital Products to Help Businesses Grow</h2>
+          <p>
+            Our team is intentionally small, working with a handful of clients at a time. We consider our clients partners and strive to simplify the creative process by using an iterative approach. This allows for pure collaboration between client and team, creating an ideal environment for producing predictable, high-quality results.
+          </p>
           <img src="http://" />
         </div>
       </div>
     </article>
 
+<!--  PROCEDURE -->
+  <article id="contact" class="bck grey">
+    <div class="container">
+      <h2>Client as a Partner</h2>
+    </div>
+  </article>
 
 <!--  CAPABILITIES -->
-    <article id="contact" class="bck grey">
+    <article id="contact" class="bck white">
       <div class="container">
         <h2>Our Capabilities</h2>
       </div>
@@ -173,11 +152,13 @@
 <!-- CONTACT -->
     <article id="contact" class="bck grey">
       <div class="container">
-        <h2>We’d Love to Hear About Your Project!</h2>
-        <p>
-          Please answer a few questions, this will save time on communication and help you receive an answer quickly.
-        </p>
-        <button class="theme" data-action="contact">Get In Touch Now</button>
+        <div data-column="8" data-offset="2">
+          <h2>We’d Love to Hear About Your Project!</h2>
+          <p>
+            Please answer a few questions, this will save time on communication and help you receive an answer quickly.
+          </p>
+          <button class="theme" data-action="contact">Get In Touch Now</button>
+        </div>
       </div>
     </article>
 
