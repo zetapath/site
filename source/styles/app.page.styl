@@ -79,23 +79,28 @@ body[data-page]
     &#we
       margin-top                            : INTRO_HEIGHT
 
+    &#contact
+      button
+        margin-top                          : (2 * SPACE)
+
     h2
       margin-bottom                         : 0
       font-weight                           : FONT_WEIGHT_BOLD
       text-transform                        : Capitalize
+
     > .container
       > p
         font-size                           : FONT_SIZE_BIG
       + .container
         padding-top                         : 0
 
-      button
-        height                            : HEIGHT = (1.45 * UNIT) !important
-        line-height                       : HEIGHT
+      button, .button
+        height                              : HEIGHT = (1.45 * UNIT) !important
+        line-height                         : HEIGHT
 
   > footer
     line-height                             : (1.5 * UNIT)
-    font-weight                             : FONT_WEIGHT_BOLD
+    font-weight                             : FONT_WEIGHT_NORMAL
     > *
       opacity                               : 0.5
     > nav > a
