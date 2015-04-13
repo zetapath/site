@@ -1,5 +1,42 @@
-@media (max-width: 400px)
-  body
-    > section
-      > h1
-        font-size                 : (2.45 * UNIT) !important
+// -- Larger than mobile -------------------------------------------------------
+@media (min-width: 400px) {}
+
+// -- Larger than phablet (also point when grid becomes active) ----------------
+@media (min-width: 550px) {}
+
+// -- Larger than phablet ------------------------------------------------------
+@media (max-width: 768px)
+  INTRO_HEIGHT                = 40vh !important
+  body[data-page]
+    > article
+      &#intro
+        height                      : INTRO_HEIGHT
+      &#we
+        margin-top                  : INTRO_HEIGHT
+      &#location
+        > .map
+          height                    : INTRO_HEIGHT
+        [data-column]
+          font-size                 : (0.9 * FONT_SIZE_TINY)
+          > [data-control="clock"]
+            margin-right            : (1.5 * SPACE)
+          strong
+            display                 : block
+            margin-top              : (1.25 * SPACE)
+      ul
+        font-size                   : FONT_SIZE_SMALL !important
+        > *
+          line-height               : (2 * FONT_SIZE_NORMAL) !important
+
+// -- Larger than desktop ------------------------------------------------------
+@media (max-width: 1024px)
+  body[data-page]
+    > article
+      &#intro
+        > h1
+          max-width                 : 75vw !important
+          font-size                 : (1.5 * UNIT) !important
+
+
+// -- Larger than Desktop HD ---------------------------------------------------
+@media (min-width: 1200px) {}
