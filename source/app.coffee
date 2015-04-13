@@ -12,6 +12,7 @@ $ ->
     more          : $ "#intro > a"
     articles      : (id: $(el).attr("id"), px: el.offsetTop for el in $ "article[data-content]")
     maps          : $ ".map > iframe"
+    contact       : $ "form"
     activeArticle : ->
       px = zpath.document.scrollTop()
       px += (zpath.height / 1.75)
@@ -22,6 +23,15 @@ $ ->
 
   # -- Init UI
   do zpath.activeArticle
+
+  # -- Actions
+  $('[data-action]').click (event) ->
+    event.preventDefault()
+    event.stopPropagation()
+  $('[data-action=contact]').click (event) ->
+    zpath.contact.toggleClass "active"
+  $('[data-action=send]').click (event) ->
+    alert "Coming Soon..."
 
   # -- Page scrolling
   $(document).on "scroll", (event) ->
