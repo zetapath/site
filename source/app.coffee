@@ -43,7 +43,7 @@ $ ->
     if correct
       $.ajax
         type      : "POST"
-        url       : "188.166.53.183:1337/mail"
+        url       : "http://188.166.53.183:1337/mail"
         data      : data
         dataType  : "json"
         success: (data, status, XHR) =>
