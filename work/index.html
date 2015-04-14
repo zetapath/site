@@ -26,7 +26,7 @@
 
     <article id="intro" class="bck dots " data-flex="vertical center">
       <video  preload loop="loop" autoplay="autoplay" poster="http://">
-        <source src="../assets/video/landing.mov">
+        <source src="../assets/video/working.mp4">
       </video>
       <h1>We Take <span class="color theme">Digital Experiences</span> to the Next Level</h1>
       <a href="#oizio" class="icon down"></a>
@@ -86,22 +86,26 @@
 <!-- CONTACT -->
     <article id="contact" class="bck grey">
       <div class="container">
-        <h2>We’d Love to Hear About Your Project!</h2>
-        <p>
-          Please answer a few questions, this will save time on communication and help you receive an answer quickly.
-        </p>
-        <button class="theme" data-action="contact">Get In Touch Now</button>
+        <div data-column="8" data-offset="2">
+          <h2>We’d Love to Hear About Your Project!</h2>
+          <p>
+            Please answer a few questions, this will save time on communication and help you receive an answer quickly.
+          </p>
+          <button class="theme" data-action="contact">Get In Touch Now</button>
+        </div>
       </div>
     </article>
 
     <form data-flex="vertical center" class="bck dots">
       <button data-action="contact" class="icon up"></button>
-      <label>Your email</label>
-      <input type="email" value="javi.jimenez.villar@gmail.com" required/>
+      <a href="/" class="logo" data-action="contact">zeta<span class="color theme">path</span></a>
+      <h2>Tell us about yourself.</h2>
+      <label>Email</label>
+      <input type="email" name="from" placeholder="Enter your email" required/>
       <label>Subject</label>
-      <input type="text" required/>
+      <input type="text" name="subject" placeholder="Introduce us to yourself" required/>
       <label>Message</label>
-      <textarea required></textarea>
+      <textarea name="text" placeholder="Tell us your story" required></textarea>
       <button class="white" data-action="send">send</button>
     </form>
 

@@ -1,4 +1,8 @@
 body[data-page]
+  .logo
+    font-size                             : (UNIT / 1.5)
+    font-weight                           : FONT_WEIGHT_BOLD
+    color                                 : WHITE
   > header, > footer
     padding                                 : 0 UNIT
   > header
@@ -12,10 +16,6 @@ body[data-page]
     transition                                all ANIMATION_DURATION ANIMATION_EASE
     &.fixed
       background                            : url("/assets/img/bck.dots.png") repeat top left
-    > a
-      font-size                             : (UNIT / 1.5)
-      font-weight                           : FONT_WEIGHT_BOLD
-      color                                 : WHITE
     > nav
       > .button
         padding                             : 0 (2 * SPACE)
@@ -104,30 +104,35 @@ body[data-page]
     top                                     : 0
     width                                   : 100%
     height                                  : 100%
-    background-color                        : BACKGROUND
+    text-align                              : left
+    background-color                        : alpha(BACKGROUND, 95%)
     transform                                 translateY(-100%)
     transition                                all ANIMATION_DURATION ANIMATION_EASE
 
-    input, textarea, label
+    > a, > h2, > input, > textarea, > label
       margin                                : 0 10%
       width                                 : 80%
       color                                 : WHITE
-    > label
-      font-size                             : FONT_SIZE_TINY
-      color                                 : THEME
+    > h2, > label
+      font-weight                           : FONT_WEIGHT_BOLD
     > input, > textarea
       margin-bottom                         : (2 * SPACE)
-      font-size                             : SIZE = (1.4 * FONT_SIZE_NORMAL)
+      font-size                             : SIZE = (UNIT / 1.3)
       line-height                           : SIZE
-      box-shadow                            : 0 1px alpha(WHITE, 25%)
+      color                                 : THEME
       opacity                               : 0.5
       &:focus
-        box-shadow                          : 0 3px THEME
         opacity                             : 1
+
+    > h2
+      font-size                             : (1.5 * UNIT)
+      margin-bottom                         : (UNIT / 2)
+    > label
+      font-size                             : (UNIT / 1.1)
     > input
       height                                : auto
     > textarea
-      height                                : 30%
+      height                                : 15%
     > button
       &.icon
         position                            : absolute

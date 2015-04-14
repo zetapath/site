@@ -40,14 +40,14 @@
 
     <article id="intro" class="bck dots " data-flex="vertical center" data-stellar-background-ratio="0.5">
       <video  preload loop="loop" autoplay="autoplay" poster="http://">
-        <source src="../assets/video/landing.mov">
+        <source src="../assets/video/landing.mp4">
       </video>
       <!-- <button data-action="aside" class="icon menu"></button> -->
       <h1>A <span class="color theme">Digital</span> Product Design <span class="color theme">Agency</span></h1>
       <a href="#we" class="icon down"></a>
     </article>
 
-    <article id="we" class="bck white">
+    <article id="we" class="bck white" data-content>
       <div class="container">
         <div data-column="8" data-offset="2">
           <h2>We Design Digital Products to Help Businesses Grow</h2>
@@ -60,14 +60,14 @@
     </article>
 
 <!--  PROCEDURE -->
-  <article id="procedure" class="bck grey">
+  <article id="procedure" class="bck grey" data-content>
     <div class="container">
       <h2>Client as a Partner</h2>
     </div>
   </article>
 
 <!--  CAPABILITIES -->
-    <article id="capabilities" class="bck white">
+    <article id="capabilities" class="bck white" data-content>
       <div class="container">
         <h2>Our Capabilities</h2>
       </div>
@@ -94,7 +94,7 @@
     </article>
 
 <!--  LOCATION -->
-    <article id="location" class="bck white">
+    <article id="location" class="bck white" data-content>
       <div class="map" data-flex="horizontal wrap">
         <iframe frameBorder='0' class="active" src='https://a.tiles.mapbox.com/v4/soyjavi.ln0djcnn/attribution.html?access_token=pk.eyJ1Ijoic295amF2aSIsImEiOiJMVjUxV1hjIn0.Cmsx5TE3grlCl69EjIeAUA' data-timezone="Europe/London"></iframe>
         <iframe frameBorder='0' src='https://a.tiles.mapbox.com/v4/soyjavi.ln0cfi58/attribution.html?access_token=pk.eyJ1Ijoic295amF2aSIsImEiOiJMVjUxV1hjIn0.Cmsx5TE3grlCl69EjIeAUA' data-timezone="Asia/Bangkok"></iframe>
@@ -150,7 +150,7 @@
     </article>
 
 <!-- CONTACT -->
-    <article id="contact" class="bck grey">
+    <article id="contact" class="bck grey" data-content>
       <div class="container">
         <div data-column="8" data-offset="2">
           <h2>We’d Love to Hear About Your Project!</h2>
@@ -162,14 +162,16 @@
       </div>
     </article>
 
-    <form data-flex="vertical center">
+    <form data-flex="vertical center" class="bck dots">
       <button data-action="contact" class="icon up"></button>
-      <label>Your email</label>
-      <input type="email" value="javi.jimenez.villar@gmail.com" required/>
+      <a href="/" class="logo" data-action="contact">zeta<span class="color theme">path</span></a>
+      <h2>Tell us about yourself.</h2>
+      <label>Email</label>
+      <input type="email" name="from" placeholder="Enter your email" required/>
       <label>Subject</label>
-      <input type="text" required/>
+      <input type="text" name="subject" placeholder="Introduce us to yourself" required/>
       <label>Message</label>
-      <textarea required></textarea>
+      <textarea name="text" placeholder="Tell us your story" required></textarea>
       <button class="white" data-action="send">send</button>
     </form>
 

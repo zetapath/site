@@ -31,7 +31,27 @@ $ ->
   $('[data-action=contact]').click (event) ->
     zpath.contact.toggleClass "active"
   $('[data-action=send]').click (event) ->
-    alert "Coming Soon..."
+    correct = true
+    data = {}
+    for el in zpath.contact.find("[name]")
+      el = $ el
+      if el.val().trim() is ""
+        correct = false
+        break
+      data[el.attr("name")] = el.val()
+
+    if correct
+      $.ajax
+        type      : "POST"
+        url       : "188.166.53.183:1337/mail"
+        data      : data
+        dataType  : "json"
+        success: (data, status, XHR) =>
+          console.log data, status
+          alert "We've you!"
+          zpath.contact.toggleClass "active"
+    else
+      alert "Please, fill out the entire form."
 
   # -- Page scrolling
   $(document).on "scroll", (event) ->
@@ -59,17 +79,3 @@ $ ->
       if target.length
         $('html,body').animate scrollTop: target.offset().top, 450
         false
-
-  # -- Mobile Menu
-  $("[data-action=aside]").on "click", -> zpath.aside.toggleClass "active"
-
-  # -- Timezones
-  window.clock.set "[data-control='clock'][data-timezone='Europe/London']"
-  window.clock.set "[data-control='clock'][data-timezone='Asia/Bangkok']"
-  $('#location > .container > [data-column]').click (event) ->
-    el = $ event.delegateTarget
-    timezone = el.children("[data-timezone]").attr "data-timezone"
-    zpath.maps.filter("[data-timezone='#{timezone}']")
-      .addClass("active")
-      .siblings().removeClass("active")
-    el.addClass("active").siblings().removeClass("active")
