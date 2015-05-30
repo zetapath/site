@@ -1,8 +1,4 @@
 body[data-page]
-  .logo
-    font-size                             : (UNIT / 1.5)
-    font-weight                           : FONT_WEIGHT_BOLD
-    color                                 : WHITE
   > header, > footer
     padding                                 : 0 UNIT
   > header
@@ -15,10 +11,11 @@ body[data-page]
     line-height                             : HEIGHT
     transition                                all ANIMATION_DURATION ANIMATION_EASE
     > .logo
-      max-width                             : 5vw
-      margin-top                            : SPACE
-      > img
-        width                               : 100%
+      height                                : SIZE = (1.2 * UNIT)
+      width                                 : SIZE
+      margin-top                            : (0.4 * UNIT)
+      background-image                      : url("/assets/img/logo.icon.white.png")
+      background-size                       : cover
     &.fixed
       background                            : url("/assets/img/bck.dots.png") repeat top left
     > nav

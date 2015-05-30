@@ -41,6 +41,7 @@ $ ->
       data[el.attr("name")] = el.val()
 
     if correct
+      console.log data
       $.ajax
         type      : "POST"
         url       : "http://188.166.53.183:1337/mail"
